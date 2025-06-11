@@ -1,3 +1,5 @@
+using MalshinonPro.DAL;
+
 namespace MalshinonPro.UI
 {
     internal class Consol
@@ -6,26 +8,44 @@ namespace MalshinonPro.UI
         {
             Console.WriteLine("Welcome to the Sources Reporting System.\n" +
                               "Enter your ID:");
-            string sourceSecretCode = Console.ReadLine();
+            int sourceSecretCode = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter your Name:");
             string sourceName = Console.ReadLine();
-            
-            // (אם לא קיים) חסר הוספת מקור חדש לטבלת אנשים
-            
+
+            Dictionary<string, object> sourceParameters = new Dictionary<string, object>
+            {
+                { "SecretCode", sourceSecretCode },
+                { "Name", sourceName },
+                { "Type", "source" },
+            };
+            PeopleCRUD.InsertSource(sourceParameters);
+
             Console.WriteLine("Enter The Target's CodeName:");
-            string targetSecretCode = Console.ReadLine();
+            int targetSecretCode = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter The Target's Name:");
             string targetName = Console.ReadLine();
-            
-            // חסר הוספת מטרה חדשה לטבלת אנשים (אם לא קיים)
-            
+
+            Dictionary<string, object> targetParameters = new Dictionary<string, object>
+            {
+                { "SecretCode", targetSecretCode },
+                { "Name", targetName },
+                { "Type", "target" },
+            };
+
+            PeopleCRUD.InsertSource(targetParameters);
+
             Console.WriteLine("Enter your report body");
             string reportBody = Console.ReadLine();
-            
-            // חסר הוספת דיווח חדש כולל שעה המקור והיעד לטבלת דיווחים
-            
-            
+            Dictionary<string, object> rportParameters = new Dictionary<string, object>
+            {
+                { "TimeReported", DateTime.Now },
+                { "SourceReporterID", sourceSecretCode },
+                { "TargetRepotedID", targetSecretCode },
+                { "ReportBody", reportBody }
+            };
+            ReportsCRUD.InsertReport(rportParameters);  
         }
     }
 }
+
     
