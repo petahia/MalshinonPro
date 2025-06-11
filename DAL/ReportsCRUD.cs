@@ -1,6 +1,8 @@
-namespace MalshinonPro.DAL;
-
-public class ReportsCRUD
+namespace MalshinonPro.DAL
 {
-    
+    public class ReportsCRUD
+    {
+        
+    }
 }
+

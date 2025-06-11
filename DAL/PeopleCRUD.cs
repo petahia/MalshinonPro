@@ -1,6 +1,8 @@
-namespace MalshinonPro.DAL;
-
-public class PeopleCRUD
+namespace MalshinonPro.DAL
 {
-    
+    public class PeopleCRUD
+    {
+        
+    }
 }
+
