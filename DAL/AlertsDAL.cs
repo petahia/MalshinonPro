@@ -1,6 +1,6 @@
 namespace MalshinonPro.DAL
 {
-    public class AlertsCRUD
+    public class AlertsDAL
     {
         
     }

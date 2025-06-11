@@ -7,4 +7,5 @@ public class Reports
     int SourceReportID;
     int TargetReportID;
     string ReporBody;
+    
 }

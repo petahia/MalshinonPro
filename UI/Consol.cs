@@ -17,8 +17,9 @@ namespace MalshinonPro.UI
                 { "SecretCode", sourceSecretCode },
                 { "Name", sourceName },
                 { "Type", "source" },
+                {"Title",title}
             };
-            PeopleCRUD.InsertSource(sourceParameters);
+            PeopleDAL.InsertSource(sourceParameters);
 
             Console.WriteLine("Enter The Target's CodeName:");
             int targetSecretCode = int.Parse(Console.ReadLine());
@@ -30,9 +31,10 @@ namespace MalshinonPro.UI
                 { "SecretCode", targetSecretCode },
                 { "Name", targetName },
                 { "Type", "target" },
+                {"Title",title}
             };
 
-            PeopleCRUD.InsertSource(targetParameters);
+            PeopleDAL.InsertSource(targetParameters);
 
             Console.WriteLine("Enter your report body");
             string reportBody = Console.ReadLine();
@@ -44,6 +46,8 @@ namespace MalshinonPro.UI
                 { "ReportBody", reportBody }
             };
             ReportsCRUD.InsertReport(rportParameters);  
+            Console.WriteLine("The Report has been created.\n" +
+                              "Thank you!");
         }
     }
 }

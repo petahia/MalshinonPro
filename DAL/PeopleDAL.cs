@@ -2,7 +2,7 @@ using MalshinonPro.UI;
 using MySql.Data.MySqlClient;
 namespace MalshinonPro.DAL
 {
-    internal class PeopleCRUD
+    internal class PeopleDAL
     {
         static string connectionString =
             "server=localhost;" +
@@ -14,7 +14,7 @@ namespace MalshinonPro.DAL
         internal static void InsertSource(Dictionary<string,object> sourceParameters)
         {
             string query =
-                "INSERT INTO People (SecretCode, Name, Type) VALUES (@SecretCode, @Name, @Type)";
+                "INSERT INTO People (SecretCode, Name, Type,Title) VALUES (@SecretCode, @Name, @Type,@Title)";
             try
             {
                 connection.Open();
