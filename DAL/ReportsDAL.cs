@@ -1,9 +1,10 @@
 using MalshinonPro.UI;
 using MySql.Data.MySqlClient;
+using Console = System.Console;
 
 namespace MalshinonPro.DAL
 {
-    public class ReportsCRUD
+    public class ReportsDAL
     {
         static string connectionString =
             "server=localhost;" +

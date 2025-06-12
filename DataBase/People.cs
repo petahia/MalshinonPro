@@ -1,9 +1,11 @@
-namespace MalshinonPro.DataBase;
-
-public class People
+namespace MalshinonPro.DataBase
 {
-    int SecretCode;
-    string Name;
-    string Type;
-    string Title;
+    public class People
+    {
+        int SecretCode;
+        string Name;
+        string Type;
+        string Title;
+    }
 }
+
