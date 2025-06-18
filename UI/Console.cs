@@ -20,6 +20,7 @@ namespace MalshinonPro.UI
                 { "Type", "source" },
                 {"Title",title}
             };
+            PeopleDAL.InsertSource(sourceParameters);
 
             System.Console.WriteLine("Enter The Target's CodeName:");
             int targetSecretCode = int.Parse(System.Console.ReadLine());
@@ -33,6 +34,7 @@ namespace MalshinonPro.UI
                 { "Type", "target" },
                 { "Title",title }
             };
+            PeopleDAL.InsertSource(targetParameters);
 
 
             System.Console.WriteLine("Enter your report body");
@@ -44,8 +46,6 @@ namespace MalshinonPro.UI
                 { "TargetRepotedID", targetSecretCode },
                 { "ReportBody", reportBody }
             };
-            PeopleDAL.InsertSource(targetParameters);
-            PeopleDAL.InsertSource(sourceParameters);
             ReportsDAL.InsertReport(rportParameters);
             int grade = PeopleDAL.AnalaisisSource(sourceSecretCode);
             if (grade >= 100)

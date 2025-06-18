@@ -41,14 +41,14 @@ namespace MalshinonPro.DAL
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
             string query =
-                @"SELECT AVG(LENGTH(Description)) AS AvgLength FROM Reports WHERE ReporterId = @SourceReportID AND Description IS NOT NULL;";
+                @"SELECT AVG(LENGTH(Description)) AS AvgLength FROM Reports WHERE SourceReportID = @SourceReportID AND Description IS NOT NULL;";
 
             MySqlCommand command = new MySqlCommand(query, connection);
             MySqlDataReader reader = command.ExecuteReader();
             int totalChars = 0;
             while (reader.Read())
             {
-                totalChars = reader.GetInt32(4);
+                totalChars = reader.GetInt32("ReportBody");
                 reader.Close();
             }
             connection.Close();

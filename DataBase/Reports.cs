@@ -1,11 +1,13 @@
-namespace MalshinonPro.DataBase;
-
-public class Reports
+namespace MalshinonPro.DataBase
 {
-    int ReportID;
-    DateTime TimeReport;
-    int SourceReportID;
-    int TargetReportID;
-    string ReporBody;
-    
+    public class Reports
+    {
+        int ReportID;
+        DateTime TimeReport;
+        int SourceReportID;
+        int TargetReportID;
+        string ReporBody;
+        
+    }
 }
+
